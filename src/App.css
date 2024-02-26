@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+*{
+  padding :0;
+  margin:0;
+  border-box:none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.user-search-container {
+  display:flex;
+  position:relative;
+  border:1px solid black;
+  border-radius:15px;
+  padding:5px;
+  margin:10px;
+  width:100%;
+}
+.user-search-input {
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  border:none;
+  width:100%;
+}
+.user-search-input input {
+  border:none;
+  width:100%;
+  min-width:300px;
+  height:40px;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.user-search-input input:focus {
+  outline:none;
+}
+.suggestion-list {
+  height:300px;
+  position:absolute;
+  overflow-y:scroll;
+  list-style:none;
+ 
+  background:#fff;
+  width:300px;
+  z-index:-4;
+}
+.suggestion-list:focus {
+opacity:0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.suggestion-list li {
+  border:1px solid #ccc;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  border-botton:1px solid #ccc;
+  
 }
-
-.App-link {
-  color: #61dafb;
+.suggestion-list li:hover {
+  background-color:#ccc;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.suggestion-list li:last-child{
+  border-botton: none;
+}
+.suggestion-list li img {
+  height:20px;
+  margin:4px;
+}
+.pills-container {
+  background:black;
+  padding:4px 10px;
+  margin:0 5px;
+  color:#fff;
+  border:1px solid #ccc;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  cursor:pointer;
+}
+.pills-container img {
+  width:25px;
 }
